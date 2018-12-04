@@ -1,0 +1,39 @@
+﻿@model List<int>
+
+@{
+    ViewBag.Title = "RandomNumbers";
+}
+
+<h2>Lottery Number Generator Result</h2>
+
+@foreach (var ball in Model)
+{
+    if (ball > 0 && ball < 10)
+    {
+        <button type="button" class="btn"> @ball </button>
+    }
+    else if (ball > 9 && ball < 20)
+    {
+        <button type="button" class="btn btn-primary"> @ball </button>
+    }
+    else if (ball > 19 && ball < 30)
+    {
+        <button type="button" class="btn btn-danger"> @ball </button>
+    }
+    else if (ball > 29 && ball < 40)
+    {
+        <button type="button" class="btn btn-success"> @ball </button>
+    }
+    else
+    {
+        <button type="button" class="btn btn-warning"> @ball </button>
+    }
+
+
+
+
+
+}
+
+
+

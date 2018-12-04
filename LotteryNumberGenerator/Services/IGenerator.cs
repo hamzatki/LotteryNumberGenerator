@@ -8,6 +8,6 @@ namespace LotteryNumberGenerator.Services
 {
     public interface IGenerator
     {
-        IList<int> GenerateNumbers();
+        List<int> GenerateNumbers(int totalBalls);
     }
 }
