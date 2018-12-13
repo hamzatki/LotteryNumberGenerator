@@ -14,10 +14,10 @@ namespace LotteryNumberGenerator.Controllers
         private readonly IGenerator _generator;
 
         // could have use Dependency Injection to over avoid using parameterless constructor
-        public GeneratorController()
-        {
+        //public GeneratorController()
+        //{
 
-        }
+        //}
 
         public GeneratorController(IGenerator generator)
         {
@@ -36,11 +36,11 @@ namespace LotteryNumberGenerator.Controllers
 
             // wanted to use DI to inject the method through interface, the main random functionality would have been in a service folder which would hav been easier to re-use somwwhere else.
 
-            //var randomBalls = _generator.GenerateNumbers(int.Parse(total)); 
+            var randomBalls = _generator.GenerateNumbers(total); 
 
-            Random r = new Random();
+            //Random r = new Random();
 
-            var randomBalls = Enumerable.Range(1, 49).OrderBy(x => r.Next()).Take(total).ToList();
+            //var randomBalls = Enumerable.Range(1, 49).OrderBy(x => r.Next()).Take(total).ToList();
 
             var sortedBalls = randomBalls.OrderBy(i => i).ToList();
 

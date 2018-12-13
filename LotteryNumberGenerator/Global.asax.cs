@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LotteryNumberGenerator.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,7 @@ namespace LotteryNumberGenerator
     {
         protected void Application_Start()
         {
+            new AutofacRegistry().Initialise();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

@@ -21,10 +21,12 @@ namespace LotteryNumberGenerator.Services
 
             Random r = new Random();
 
-            for(int i = 1; i<= totalBalls; i++)
-            {
-                randomBalls.Add(r.Next(1, 50));
-            }
+            //for(int i = 1; i<= totalBalls; i++)
+            //{
+            //    randomBalls.Add(r.Next(1, 50));
+            //}
+
+            randomBalls = Enumerable.Range(1, 49).OrderBy(x => r.Next()).Take(totalBalls).ToList();
 
 
             return randomBalls;
